@@ -5,119 +5,125 @@
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://www.python.org/)
 [![Data Extraction](https://img.shields.io/badge/purpose-data--extraction-orange)](#)
 
-**Scrape Pinterest search results with 40+ data fields.** Extract pins, images, prices, engagement metrics, and more from Pinterest search by keyword. Perfect for market research, competitor analysis, and SEO tracking.
+**Search Pinterest by keywords and extract pins with 40+ data fields per pin.** Extract images, saves, engagement metrics, pinner details, board information, product pins with pricing. Perfect for SEO research, trend analysis, content inspiration, and competitive monitoring.
 
 ---
 
 ## What is Pinterest Search Scraper?
 
-**Pinterest Search Scraper** is a powerful data extraction tool that enables you to scrape **Pinterest search results** at scale. Simply enter your search keywords, and extract comprehensive data including pin titles, descriptions, images, prices, engagement metrics, and author profiles. This tool handles Pinterest's dynamic content loading, pagination, and anti-scraping measures automatically.
+**Pinterest Search Scraper** is a specialized tool for extracting **Pinterest search results by keyword**. Simply provide search queries, and retrieve pins including images, descriptions, engagement metrics, creator information, and product data when available. This tool handles any search query, from broad terms to niche keywords.
 
 ## Why Use Pinterest Search Scraper?
 
 ### Business Use Cases:
-- **Market Research**: Discover trending products and content in your niche
-- **Competitor Analysis**: Monitor what your competitors are pinning and how users engage
-- **SEO Strategy**: Find high-performing keywords and content ideas
-- **Content Planning**: Identify viral pin patterns to inform your marketing
-- **Product Sourcing**: Find popular products with proven engagement metrics
-- **Influencer Discovery**: Locate pinners with high engagement for partnerships
+- **SEO Research** - Find trending keywords and content in your niche
+- **Trend Analysis** - Track popular pins and topics over time
+- **Content Planning** - Discover inspiration for your content calendar
+- **Competitor Monitoring** - See what's performing in your market
+- **Keyword Research** - Identify high-engagement search terms
+- **Product Discovery** - Find trending products with pricing info
 
-## How to Scrape Pinterest Search Results
+## How to Search Pinterest
 
 1. **Open the [Pinterest Search Scraper on Apify](https://apify.com/devcake/pinterest-search-scraper)**
-2. **Enter your search keywords** (e.g., "wedding decoration", "vegan recipes")
-3. **Configure options** (max items, proxy settings)
-4. **Click "Start"** and wait for extraction
-5. **Download data** in JSON, CSV, or Excel formats
+2. **Add search queries** (e.g., "minimalist home office", "sustainable fashion")
+3. **Set max results** (up to 250 per query, default: 25)
+4. **Enable comments** (optional) - Fetch comments for each pin
+5. **Enable proxy** (recommended) - Use Apify Proxy for reliability
+6. **Click "Start"** and download your data
 
-**Pro Tip**: Use multiple search runs with related keywords to build comprehensive datasets for trend analysis.
+**Pro Tip**: Use multiple queries to compare trends across different keywords or niches.
 
 ## Features
 
-✅ **40+ Data Fields** - Extract comprehensive pin data including title, description, image URLs, prices, saves, comments, and more
-
-✅ **Automatic Pagination** - Handles infinite scroll and page navigation automatically
-
-✅ **Proxy Rotation** - Built-in proxy support to avoid IP blocks
-
-✅ **Multiple Search Queries** - Process multiple keywords in a single run
-
-✅ **Flexible Output** - Export data in JSON, CSV, Excel, or HTML formats
-
-✅ **Fast & Reliable** - Optimized extraction with minimal resource usage
-
-✅ **Scheduled Runs** - Set up recurring scrapes for continuous monitoring
+- **Search by Keyword** - Extract pins from any search query
+- **All Image Sizes** - Get every resolution (236x, 474x, 564x, 736x, orig)
+- **Engagement Metrics** - Saves, likes, comments, repins, shares
+- **Creator Details** - Pinner username, full name, avatar, follower count
+- **Board Information** - Board name, URL, pin count, owner
+- **Product Pin Detection** - Identify pins with pricing, stock status
+- **Comments with Replies** - Optional: Extract user feedback and nested replies
+- **No Login Required** - Works without cookies
+- **Proxy Support** - Built-in Apify Proxy integration
 
 ## Pricing
 
-| Plan | Price | Results |
-|------|-------|---------|
-| Pay-per-event | **$4.00** | 1,000 pins |
-| Monthly | Custom | Unlimited |
+**Pay per use** — $4 per 1,000 results
 
-**Try it free** with Apify's trial credits!
+No subscriptions, no commitments, no hidden fees. Control your spending with the Maximum Cost Per Run option.
 
-## Input Example
+## Input
 
-```json
-{
-  "searchQueries": ["wedding ideas", "home decor"],
-  "maxItems": 100,
-  "proxy": {
-    "useApifyProxy": true
-  }
-}
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `searchQueries` | array | ✅ Yes | Search terms to find pins |
+| `maxResults` | integer | No | Max pins per query (1-250, default: 25) |
+| `includeComments` | boolean | No | Fetch comments for each pin |
+| `maxComments` | integer | No | Max comments per pin (1-100, default: 10) |
+| `proxyConfig` | object | No | Proxy configuration (recommended) |
+| `maxTotalChargeUsd` | number | No | Spending limit per run (default: $10) |
+
+### Search URL Formats
+
+```
+https://www.pinterest.com/search/pins/?q=keyword
+https://www.pinterest.com/search/pins/?q=keyword&rs=hub_page
 ```
 
 ## Output Example
 
 ```json
 {
-  "pinId": "123456789",
-  "title": "Rustic Wedding Centerpiece Ideas",
-  "description": "Beautiful mason jar centerpieces...",
-  "imageUrl": "https://i.pinimg.com/...",
-  "price": "$24.99",
-  "saves": 15234,
-  "comments": 342,
-  "authorName": "Sarah's Wedding Blog",
-  "authorUsername": "@sarahweddings",
-  "boardName": "Wedding Inspiration",
-  "pinUrl": "https://pinterest.com/pin/123456789"
+  "id": "123456789",
+  "url": "https://www.pinterest.com/pin/123456789/",
+  "title": "Minimalist Home Office Setup",
+  "images": {
+    "236x": {"url": "https://i.pinimg.com/236x/..."},
+    "474x": {"url": "https://i.pinimg.com/474x/..."}
+  },
+  "saves": 1523,
+  "pinner": {
+    "username": "designlover",
+    "follower_count": 12500
+  },
+  "board": {
+    "name": "Office Inspiration",
+    "pin_count": 245
+  },
+  "is_product_pin": false
 }
 ```
 
 ## Related Actors
 
-| Actor | Description |
-|-------|-------------|
-| [Pinterest Board Scraper](https://github.com/Bahm9919/pinterest-board-scraper) | Download complete Pinterest boards |
-| [Pinterest Profile Scraper](https://github.com/Bahm9919/pinterest-profile-scraper) | Extract user profiles with emails |
-| [Pinterest Pin Scraper](https://github.com/Bahm9919/pinterest-pin-scraper) | Scrape individual pins with product data |
+| Actor | Description | Pricing |
+|-------|-------------|---------|
+| [Pinterest Pin Scraper](https://github.com/devcake/pinterest-pin-scraper) | Scrape individual pins with product data | $4 per 1,000 pins |
+| [Pinterest Profile Scraper](https://github.com/devcake/pinterest-profile-scraper) | Extract user profiles with emails | $4 per 1,000 profiles |
+| [Pinterest Board Scraper](https://github.com/devcake/pinterest-board-scraper) | Download complete boards | $4 per 1,000 pins |
 
 ## FAQ
 
-### Is scraping Pinterest legal?
-Yes, scraping public data from Pinterest for research and analysis purposes is generally legal. However, always respect Pinterest's Terms of Service and robots.txt. This tool is intended for legitimate business use cases only.
+### Do I need Pinterest login credentials?
+No! This scraper works without login for all public search results.
 
-### How can I avoid being blocked?
-This tool includes built-in proxy rotation. For large-scale scraping, we recommend using residential proxies and limiting request rates.
+### How many results can I get per query?
+Up to 250 pins per search query. For larger datasets, use multiple runs with different keyword variations.
 
-### Can I scrape Pinterest without an account?
-Yes! This scraper doesn't require a Pinterest account. It extracts publicly available data from search results.
+### Can I search for specific types of pins?
+Yes. Include keywords like "product", "buy", "price" to find product pins, or use Pinterest's advanced search filters manually.
 
-### What data can I extract?
-You can extract 40+ fields including: pin ID, title, description, image URLs, price, availability, save count, comment count, author details, board info, and direct pin URLs.
+### Does this include Pinterest's "More ideas" section?
+Yes, the API-based approach captures results from the main search feed.
 
-### How do I handle pagination?
-The scraper handles pagination automatically. Just set your desired `maxItems` and the tool will paginate until it reaches the limit or exhausts results.
+### Are comments included?
+Yes! Enable `includeComments: true` to fetch comments with nested replies for each pin.
 
 ## Get it on Apify
 
 [![Run on Apify](https://img.shields.io/badge/Run_on-Apify-informational?style=for-the-badge&logo=apify)](https://apify.com/devcake/pinterest-search-scraper)
 
-**Start scraping Pinterest search results in minutes!**
+**Start searching Pinterest in minutes!**
 
 ---
 
@@ -125,13 +131,15 @@ The scraper handles pagination automatically. Just set your desired `maxItems` a
 
 Check out my other scraping tools:
 
-- [AlternativeTo Data Scraper](https://github.com/Bahm9919/alternativeto-data-scraper)
-- [Alibaba Products Scraper](https://github.com/Bahm9919/alibaba-products-scraper)
-- [Alibaba Supplier Scraper](https://github.com/Bahm9919/alibaba-supplier-scraper)
-- [GlobalSources Products Scraper](https://github.com/Bahm9919/globalsources-products-scraper)
+### E-Commerce Suite
+- [AlternativeTo Data Scraper](https://github.com/devcake/alternativeto-data-scraper) - Extract software alternatives with license filters
+- [Alibaba Products Scraper](https://github.com/devcake/alibaba-products-scraper) - Find profitable products with low MOQ
+- [Alibaba Supplier Scraper](https://github.com/devcake/alibaba-supplier-scraper) - Find verified suppliers & manufacturers
+- [GlobalSources Products Scraper](https://github.com/devcake/globalsources-products-scraper) - Source from 10M+ verified suppliers
+- [GlobalSources Supplier Scraper](https://github.com/devcake/globalsources-supplier-scraper) - 6-level verification data
 
 ---
 
 **License**: MIT | **Author**: [@devcake](https://apify.com/u/devcake)
 
-[![GitHub stars](https://img.shields.io/github/stars/Bahm9919/pinterest-search-scraper?style=social)](https://github.com/Bahm9919/pinterest-search-scraper)
+[![GitHub stars](https://img.shields.io/github/stars/devcake/pinterest-search-scraper?style=social)](https://github.com/devcake/pinterest-search-scraper)
